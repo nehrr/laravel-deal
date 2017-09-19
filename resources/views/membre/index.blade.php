@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
 
             <table class="table table-striped">
                 <thead>
@@ -34,8 +34,8 @@
                         <td>{{ $user->telephone }}</td>
                         <td>{{ $user->civilite }}</td>
                         <td>{{ $user->statut == 1 ? 'Admin' : 'Membre' }}</td>
-                        <td>{{ $user->date_enregistrement }}</td>
-                        <td><a href=''><span class="glyphicon glyphicon-search"></span></a>
+                        <td>{{ date('d/m/Y H:i', $user->created_at->timestamp) }}</td>
+                        <td><a href=' {{ route('membre.show', ['id' => $user->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
                             <a href="{{ route('membre.edit', ['id' => $user->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
                             <a href="{{ route('membre.remove', ['id' => $user->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>

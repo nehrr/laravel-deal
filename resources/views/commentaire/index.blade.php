@@ -28,7 +28,9 @@
                         <td>{{ $commentaire->id_annonce }}</td>
                         <td> {{ $commentaire->commentaire }}</td>
                         <td> {{ $commentaire->created_at }}</td>
-                        <td>xx</td>
+                        <td><a href=' {{ route('commentaire.show', ['id' => $commentaire->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
+                            <a href="{{ route('commentaire.edit', ['id' => $commentaire->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="{{ route('commentaire.remove', ['id' => $commentaire->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
                 </tbody>
 

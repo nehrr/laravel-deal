@@ -24,7 +24,7 @@
                         <td>{{ $categorie->id }}</td>
                         <td>{{ $categorie->titre }}</td>
                         <td>{{ $categorie->motscles }}</td>
-                        <td><a href=''><span class="glyphicon glyphicon-search"></span></a>
+                        <td><a href=' {{ route('categorie.show', ['id' => $categorie->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
                             <a href="{{ route('categorie.edit', ['id' => $categorie->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
                             <a href="{{ route('categorie.remove', ['id' => $categorie->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
