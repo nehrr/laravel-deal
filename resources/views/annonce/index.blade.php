@@ -46,15 +46,16 @@
                         <td>{{ $annonce->titre }}</td>
                         <td>{{ $annonce->description_courte }}</td>
                         <td>{{ $annonce->description_longue }}</td>
-                        <td>{{ $annonce->prix }}</td>
-                        <td>{{ $annonce->photo }}</td>
+                        <td>{{ $annonce->prix }}€</td>
+                        <td><img src='/img/{{ $annonce->photo }}' height="25%"><br>
+                            <a href="{{ route('photo.show', ['id' => $annonce->photo_id]) }}">Voir plus de photos...</a></td>
                         <td>{{ $annonce->pays }}</td>
                         <td>{{ $annonce->ville }}</td>
                         <td> {{ $annonce-> adresse }}</td>
                         <td>{{ $annonce->cp }}</td>
-                        <td>{{ $annonce->membre_id }}</td>
-                        <td>{{ $annonce->categorie_id }}</td>
-                        <td>{{ date('d/m/Y H:i', $annonce->created_at) }}</td>
+                        <td><a href='{{ route('membre.show', ['id' => $annonce->membre_id]) }}'> {{ $annonce->membre->name }}</a></td>
+                        <td><a href='{{ route('categorie.show', ['id' => $annonce->categorie_id]) }}'>{{ $annonce->categorie->titre }}</a></td>
+                        <td>{{ date('d/m/Y H:i', $annonce->created_at->timestamp) }}</td>
                         <td><a href=' {{ route('annonce.show', ['id' => $annonce->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
                             <a href="{{ route('annonce.edit', ['id' => $annonce->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
                             <a href="{{ route('annonce.remove', ['id' => $annonce->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>

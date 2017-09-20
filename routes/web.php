@@ -42,12 +42,18 @@ Route::post('/note/update/{note}', 'NoteController@update')->name('note.update')
 
 Route::get('/commentaires', 'CommentaireController@index')->name('commentaire.index');
 Route::get('/commentaire/show/{commentaire}', 'CommentaireController@show')->name('commentaire.show');
+Route::post('/commentaire/store', 'CommentaireController@store')->name('commentaire.store');
+Route::get('/commentaire/remove/{commentaire}', 'CommentaireController@destroy')->name('commentaire.remove');
+Route::get('/commentaire/edit/{commentaire}', 'CommentaireController@edit')->name('commentaire.edit');
+Route::post('/commentaire/update/{commentaire}', 'CommentaireController@update')->name('commentaire.update');
 
 Route::get('/annonces', 'AnnonceController@index')->name('annonce.index');
 Route::get('/annonce/show/{annonce}', 'AnnonceController@show')->name('annonce.show');
 Route::get('/annonce/remove/{annonce}', 'AnnonceController@destroy')->name('annonce.remove');
 Route::get('/annonce/edit/{annonce}', 'AnnonceController@edit')->name('annonce.edit');
 Route::post('/annonce/update/{annonce}', 'AnnonceController@update')->name('annonce.update');
+
+Route::get('/photo/show/{photo}', 'PhotoController@show')->name('photo.show');
 
 Route::middleware('auth')->group(function() {
     

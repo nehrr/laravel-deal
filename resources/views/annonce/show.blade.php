@@ -39,7 +39,7 @@
                         <td>{{ $annonce->cp }}</td>
                         <td>{{ $annonce->membre_id }}</td>
                         <td>{{ $annonce->categorie_id }}</td>
-                        <td>{{ date('d/m/Y H:i', $annonce->created_at) }}</td>
+                        <td>{{ date('d/m/Y H:i', $annonce->created_at->timestamp) }}</td>
                         <td><a href=' {{ route('annonce.show', ['id' => $annonce->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
                             <a href="{{ route('annonce.edit', ['id' => $annonce->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
                             <a href="{{ route('annonce.remove', ['id' => $annonce->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    public function membre1(){
+    public function membre_id1(){
         return $this->belongsTo(User::class);
     }
     
-    public function membre2(){
+    public function membre_id2(){
         return $this->belongsTo(User::class);
     }
     

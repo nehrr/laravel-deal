@@ -17,27 +17,24 @@
                     </tr>
                 </thead>
 
-
-
-                @foreach($commentaires as $commentaire)
-
                 <tbody>
                     <tr>
                         <td>{{ $commentaire->id }}</td>
-                        <td><a href=' {{ route('membre.show', ['id' => $commentaire->membre_id]) }} '>{{ $commentaire->membre_id }} - {{$commentaire->membre->email}}</a></td>
-                        <td><a href=' {{ route('annonce.show', ['id' => $commentaire->annonce_id]) }} '>{{ $commentaire->annonce_id }} - {{$commentaire->annonce->titre}}</a></td>
-                        <td> {{ $commentaire->commentaire }}</td>
-                        <td> {{ date('d/m/Y H:i', $commentaire->created_at->timestamp) }}</td>
+                        <td>{{ $commentaire->membre_id }}</td>
+                        <td>{{ $commentaire->annonce_id }}</td>
+                        <td> {{$commentaire->commentaire}}</td>
+                        <td>{{ date('d/m/Y H:i', $commentaire->created_at->timestamp) }}</td>
                         <td><a href=' {{ route('commentaire.show', ['id' => $commentaire->id]) }} '><span class="glyphicon glyphicon-search"></span></a>
                             <a href="{{ route('commentaire.edit', ['id' => $commentaire->id]) }}"><span class="glyphicon glyphicon-edit"></span></a>
                             <a href="{{ route('commentaire.remove', ['id' => $commentaire->id]) }}"><span class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
                 </tbody>
 
-                @endforeach
             </table>
 
         </div>
     </div>
+        
+        
 </div>
 @endsection
